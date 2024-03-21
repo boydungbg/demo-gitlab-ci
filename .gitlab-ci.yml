@@ -41,6 +41,10 @@ build-job:       # This job runs in the build stage, which runs first.
   script:
     - echo "Compiling the code..."
     - echo "Compile complete."
+    - cd..
+    - cd..
+    - pwd
+    - Remove-Item -Force -Recurse -Path .\$CI_JOB_ID
   tags:
     - dev
 
