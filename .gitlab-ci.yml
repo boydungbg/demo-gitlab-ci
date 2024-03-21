@@ -21,10 +21,13 @@ stages:
   - build
   - deploy
 
+variables:
+  GIT_CLONE_PATH: '$CI_BUILDS_DIR/$CI_JOB_ID/$CI_PROJECT_NAME'
+
 lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
   script:
-    - pwd
+    -  pwd
     - echo "Linting code... This will take about 60 seconds."
     - sleep 60
     - echo "No lint issues found."
