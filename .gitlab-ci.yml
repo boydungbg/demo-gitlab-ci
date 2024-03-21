@@ -24,6 +24,7 @@ stages:
 lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
   script:
+    - pwd
     - echo "Linting code... This will take about 60 seconds."
     - sleep 60
     - echo "No lint issues found."
